@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700');
+
+body {
+  font-family: 'Dosis', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  background-color: #000028;
+ 
+  * {
+    cursor: inherit;
+  }
+}
+
+#cursor {
+  position: absolute;
+  left: -28px;
+  top: -15px;
+  will-change: transform;
+  transform: translate(-999px, -999px);
+  transition:all 1.5s;
+
+  pointer-events: none;
+
+  img {
+    will-change: transform;
+    transition: transform .1s linear;
+    transition:all 1.5s;
+  }
+}
+
+@keyframes color-blink {
+  0% { color: hsla(5, 83%, 53%, 1) }
+  14% { color: hsla(33, 88%, 59%, 1); }
+  28% { color: hsla(62, 98%, 66%, 1); }
+  42% { color: hsla(102, 81%, 61%, 1); }
+  56% { color: hsla(170, 94%, 72%, 1); }
+  70% { color: hsla(227, 100%, 48%, 1); }
+  84% { color: hsla(279, 91%, 59%, 1); }
+  100% { color: hsla(279, 91%, 59%, 1); }
+}
+
+header {
+  text-align: center;
+
+  img {
+    opacity: .3;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  a {
+    &:first-of-type {
+      animation: 2s infinite alternate color-blink;
+    }
+    font-weight: 600;
+    color: currentcolor;
+    text-decoration: none;
+  }
+}
